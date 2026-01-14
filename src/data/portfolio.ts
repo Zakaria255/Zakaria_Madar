@@ -4,7 +4,7 @@ export const portfolioData = {
         title: "Odoo Functional Consultant | Senior Web Developer | Digital Communication & Web Manager",
         email: "sakicade41@gmail.com",
         location: "Mogadishu, Somalia",
-        summary: "Odoo Functional Certified Consultant with hands-on experience delivering 30+ Odoo projects across 6 companies. Expert in system operations, digital workflows, and business process optimization. Senior Web Developer specializing in scalable, SEO-optimized, and performance-driven web solutions.",
+        summary: "Odoo Functional Certified Consultant with hands-on experience delivering 12+ Odoo projects across 6 companies. Expert in system operations, digital workflows, and business process optimization. Senior Web Developer specializing in scalable, SEO-optimized, and performance-driven web solutions.",
     },
     experience: [
         {

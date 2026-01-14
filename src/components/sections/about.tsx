@@ -36,11 +36,11 @@ export function About() {
 
                         <div className="mt-8 grid grid-cols-2 gap-6">
                             <div className="p-4 bg-background rounded-lg border shadow-sm">
-                                <h3 className="text-3xl font-bold text-accent mb-1">30+</h3>
+                                <h3 className="text-3xl font-bold text-accent mb-1">12+</h3>
                                 <p className="text-sm font-medium text-muted-foreground">Odoo Projects Delivered</p>
                             </div>
                             <div className="p-4 bg-background rounded-lg border shadow-sm">
-                                <h3 className="text-3xl font-bold text-accent mb-1">6+</h3>
+                                <h3 className="text-3xl font-bold text-accent mb-1">3+</h3>
                                 <p className="text-sm font-medium text-muted-foreground">Years Experience</p>
                             </div>
                         </div>
