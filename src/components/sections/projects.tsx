@@ -1,34 +1,16 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-
-// Placeholder project data
-const projects = [
-    {
-        title: "Odoo ERP Implementation",
-        category: "Odoo / ERP",
-        description: "Full-scale Odoo implementation for a large manufacturing firm, streamlining inventory, sales, and accounting processes. Resulted in 30% operational efficiency increase.",
-        tags: ["Odoo", "Python", "PostgreSQL", "Manufacturing"],
-    },
-    {
-        title: "Taagerso Digital Platform",
-        category: "Web Development / Operations",
-        description: "Developed and managed the digital operations platform for Taagerso, integrating e-commerce workflows with backend logistics.",
-        tags: ["Next.js", "React", "Node.js", "Operations"],
-    },
-    {
-        title: "HornReport News Portal",
-        category: "Web & Content Strategy",
-        description: "Architected and maintained a high-traffic news portal with advanced SEO optimization and content management strategy.",
-        tags: ["CMS", "SEO", "Performance", "Analytics"],
-    },
-];
+import { portfolioData } from "@/data/portfolio";
+import { ProjectModal } from "@/components/ui/project-modal";
 
 export function Projects() {
+    const [selectedProject, setSelectedProject] = useState<typeof portfolioData.projects[0] | null>(null);
+
     return (
         <section id="projects" className="py-20 bg-background">
             <div className="container px-4 mx-auto">
@@ -45,7 +27,7 @@ export function Projects() {
                 </motion.div>
 
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    {projects.map((project, index) => (
+                    {portfolioData.projects.map((project, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 20 }}
@@ -59,21 +41,31 @@ export function Projects() {
                                         {project.category}
                                     </div>
                                     <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                                    <CardDescription>
-                                        {project.description}
+                                    <CardDescription className="line-clamp-3">
+                                        {project.overview}
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <div className="flex flex-wrap gap-2 mt-2">
-                                        {project.tags.map((tag) => (
-                                            <span key={tag} className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground">
-                                                {tag}
+                                        {project.technologies.slice(0, 4).map((tech) => (
+                                            <span key={tech} className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground">
+                                                {tech}
                                             </span>
                                         ))}
+                                        {project.technologies.length > 4 && (
+                                            <span className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground">
+                                                +{project.technologies.length - 4}
+                                            </span>
+                                        )}
                                     </div>
                                 </CardContent>
                                 <CardFooter>
-                                    <Button variant="ghost" size="sm" className="w-full justify-between group">
+                                    <Button
+                                        variant="ghost"
+                                        size="sm"
+                                        className="w-full justify-between group"
+                                        onClick={() => setSelectedProject(project)}
+                                    >
                                         View Details
                                         <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                                     </Button>
@@ -83,6 +75,12 @@ export function Projects() {
                     ))}
                 </div>
             </div>
+
+            <ProjectModal
+                project={selectedProject}
+                isOpen={!!selectedProject}
+                onClose={() => setSelectedProject(null)}
+            />
         </section>
     );
 }

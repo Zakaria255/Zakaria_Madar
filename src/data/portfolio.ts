@@ -80,5 +80,71 @@ export const portfolioData = {
             description: "Committed to ongoing professional development, staying updated with evolving technologies, and refining my expertise.",
             icon: "BookOpen"
         }
+    ],
+    projects: [
+        {
+            id: "odoo-erp",
+            title: "Odoo ERP Implementation",
+            category: "Odoo / ERP",
+            overview: "A comprehensive Odoo V17 implementation for a large-scale manufacturing firm. The project aimed to digitize the entire supply chain, from raw material procurement to final product delivery and accounting.",
+            objectives: [
+                "Eliminate manual spreadsheet tracking.",
+                "Real-time inventory visibility across multiple warehouses.",
+                "Automated financial reporting and cost analysis.",
+                "Streamlined sales and purchase approvals."
+            ],
+            scope: "Full system configuration, custom module development for specific manufacturing workflows, data migration from legacy systems, and staff training.",
+            features: [
+                "Multi-warehouse Inventory Management",
+                "Automated Manufacturing Orders (BOM)",
+                "Integrated Accounting & Invoicing",
+                "Custom Reporting Dashboard"
+            ],
+            technologies: ["Odoo 17", "Python", "PostgreSQL", "XML", "Ubuntu"],
+            results: "achieved a 30% increase in operational efficiency and reduced inventory discrepancies by 95% within the first quarter.",
+            image: "odoo-project.jpg"
+        },
+        {
+            id: "taagerso-platform",
+            title: "Taagerso Digital Platform",
+            category: "Web Development / Operations",
+            overview: "Currently serving as the digital backbone for Taagerso Technology. This platform integrates e-commerce capabilities with internal operational workflows, ensuring a seamless bridge between front-end sales and back-end logistics.",
+            objectives: [
+                "Create a centralized hub for digital operations.",
+                "Improve customer engagement through a responsive UI.",
+                "Automate internal task assignments based on orders."
+            ],
+            scope: "End-to-end development of the web platform, API integration with third-party logistics providers, and internal dashboard creation.",
+            features: [
+                "Real-time Order Tracking",
+                "Dynamic Content Management",
+                "Role-based Access Control",
+                "Automated Email Notifications"
+            ],
+            technologies: ["Next.js", "React", "Node.js", "Tailwind CSS", "REST API"],
+            results: "Processed over 500+ monthly orders with zero downtime and improved team collaboration scores by 40%.",
+            image: "taagerso.jpg"
+        },
+        {
+            id: "hornreport-news",
+            title: "HornReport News Portal",
+            category: "Web & Content Strategy",
+            overview: "A high-traffic news portal designed for speed, accessibility, and SEO dominance. The project focused on delivering content rapidly to a global audience while maintaining a high standard of editorial integrity.",
+            objectives: [
+                "Achieve <1s page load times on mobile.",
+                "Implement robust SEO structure for Google News compliance.",
+                "Secure and scalable infrastructure for traffic spikes."
+            ],
+            scope: "Architecture design, CMS configuration, frontend development using modern web technologies, and ongoing server maintenance.",
+            features: [
+                "Server-side Rendering (SSR) for SEO",
+                "AMP (Accelerated Mobile Pages) Support",
+                "AdSense & Analytics Integration",
+                "Automated Social Media Sharing"
+            ],
+            technologies: ["Next.js", "Vercel", "Google Analytics", "SEO Implementation", "CMS"],
+            results: "Grew monthly active users to 50k+ and consistently ranked on the first page of search results for key regional topics.",
+            image: "hornreport.jpg"
+        }
     ]
 };
